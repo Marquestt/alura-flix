@@ -1,10 +1,13 @@
+import Rodape from 'components/Rodape';
 import styles from './Inicio.module.css';
+import Cabecalho from 'components/Cabecalho';
 
 const Inicio = () => {
     return(
-        <header className={styles.cabecalho}>
-            <h1>Olá mundo!</h1>
-        </header>
+       <>
+        <Cabecalho />
+        <Rodape />
+       </>
     )
 }
 

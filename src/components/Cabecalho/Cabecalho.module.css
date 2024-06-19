@@ -1,0 +1,6 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 10px 5px var(--azul);
+}

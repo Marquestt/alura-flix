@@ -1,8 +1,12 @@
+:root {
+  --azul: #2271D1;
+  --cinza-escuro: rgba(0, 0, 0, 90%);
+}
+
 body {
+  background-color: rgba(0, 0, 0, 90%);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Source Sans 3", sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
