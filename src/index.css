@@ -1,10 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --azul: #2271D1;
+  --azul-claro: #6BD1FF;
   --cinza-escuro: rgba(0, 0, 0, 90%);
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F5F5;
 }
 
 body {
-  background-color: rgba(0, 0, 0, 90%);
+  background-color: var(--cinza-escuro);
   margin: 0;
   font-family: "Source Sans 3", sans-serif;;
   -webkit-font-smoothing: antialiased;

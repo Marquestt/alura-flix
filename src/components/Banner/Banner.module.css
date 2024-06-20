@@ -1,0 +1,60 @@
+.capa {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.capa::before  {
+    background-image: url(https://i.pinimg.com/564x/ac/02/07/ac02073cc739700e575b96b95ecb619f.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--azul);
+    opacity: .6;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container {
+    padding: 10rem 2rem 4rem 2rem;
+    display: flex;
+}
+
+.content {
+    margin-right: 2rem;
+    color: var(--cinza-claro);
+    position: relative;
+    z-index: 1;
+}
+
+.content h2 {
+    background-color: var(--azul-claro);
+    border-radius: .5rem;
+    width: 295px;
+    font-size: 48px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content h3{
+    font-size: 46px;
+    font-weight: 400;
+}
+
+.content p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.container img {
+    width: 646px;
+    height: 333px;
+}
