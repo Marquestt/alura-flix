@@ -1,0 +1,28 @@
+.container {
+    width: 432px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.container .capa {
+    width: 100%;
+}
+
+.container div {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 0 0 1rem 1rem;
+    align-items: center;
+    color: var(--cinza-claro);
+    text-transform: uppercase;
+    background-color: var(--cinza-escuro);
+}
+
+.container div p {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.container div p img {
+    padding-right: 1rem;
+}

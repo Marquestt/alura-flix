@@ -57,4 +57,5 @@
 .container img {
     width: 646px;
     height: 333px;
+    border: .22rem solid var(--azul-claro);
 }

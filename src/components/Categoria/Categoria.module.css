@@ -1,11 +1,8 @@
 .container {
-    display: flex;
-    justify-content: space-between;
     padding: 1rem 2rem;
 }
 
 .container h2 {
-    background-color: var(--azul-claro);
     color: var(--cinza-claro);
     text-transform: uppercase;
     width: 432px;
@@ -14,4 +11,9 @@
     text-align: center;
     border-radius: .5rem;
     align-content: center;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
 }
