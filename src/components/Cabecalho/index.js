@@ -10,10 +10,10 @@ const Cabecalho = () => {
             <img src={logo} alt='Logo AluraFlix' />
         </Link>
         <nav>
-            <NavLinks src='/'>
+            <NavLinks url='/'>
                 Home
             </NavLinks>
-            <NavLinks src='/novo-video'>
+            <NavLinks url='/novo-video'>
                 Novo vídeo
             </NavLinks>
         </nav>

@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-flow: column wrap;
+    color: var(--cinza-claro);
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.container h2 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.container h4 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.container h2, .container h4 {
+    text-transform: uppercase;
+}
