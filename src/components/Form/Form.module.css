@@ -11,16 +11,33 @@
     font-weight: 500;
     border-width: .1rem 0 .1rem 0; 
     border-style: solid;
+    padding: .5rem 0;
     border-color: #262626;
+}
+
+.formulario .container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    flex-direction: column; /* Deixar assim por enquanto */
 }
 
 .formulario input, .formulario select, .formulario textarea {
     width: 40%;
     border: .1rem solid #262626;
     background-color: transparent;
+    height: 62px;
+    border-radius: .5rem;
+    padding-left: .5rem;
+    color: #676767;
 }
 
-.formulario .botao {
+.formulario textarea {
+    height: 220px;
+}
+
+.formulario .botao, .formulario .reset {
     width: 180px;
     height: 50px;
     text-transform: uppercase;
@@ -29,8 +46,9 @@
     border-radius: 1rem;
     color: var(--cinza-claro);
     cursor: pointer;
+    font-weight: 700;
 }
 
-.formulario .botao:nth-child(2) {
+.formulario .reset {
     border-color: var(--cinza-claro);
 }
