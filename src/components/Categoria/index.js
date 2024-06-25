@@ -1,12 +1,14 @@
 import Card from 'components/Card';
 import styles from './Categoria.module.css';
 
-const Categoria = (props) => {
+const Categoria = (props, { categoria, aoEditar }) => {
     return(
         <section className={styles.container}>
             <h2 style={{backgroundColor: props.corPrincipal}}>{props.nome}</h2>
             <div className={styles.cards}>
-                <Card contorno={props.contorno} borda={props.borda}/>
+                {categoria.videos.map(video => (
+                    <Card contorno={props.contorno} borda={props.borda} key={video.id} video={video} aoEditar={aoEditar}/>
+                ))}
             </div>
         </section>
     )

@@ -25,4 +25,5 @@
 
 .container div p img {
     padding-right: 1rem;
+    vertical-align: middle;
 }

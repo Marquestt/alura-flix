@@ -5,6 +5,8 @@ import Rodape from 'components/Rodape';
 import NovoVideo from 'pages/NovoVideo';
 
 function AppRoutes() {
+
+
     return(
         <BrowserRouter>
             <Cabecalho />
