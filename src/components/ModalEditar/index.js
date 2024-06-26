@@ -1,7 +1,39 @@
+import CampoTexto from 'components/CampoTexto';
 import styles from './ModalEditar.module.css';
 import fechar from './cross.png';
+import Botao from 'components/Botao';
+import CampoAreaTexto from 'components/CampoAreaTexto';
+import ListaSuspensa from 'components/ListaSuspensa';
+import { useEffect, useState } from 'react';
 
-const ModalEditar = ({ mostrar, aoFechar, video, aoAlterar, aoEnviar }) => {
+const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
+    const [titulo, setTitulo] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [capa, setCapa] = useState('');
+    const [linkVideo, setLinkVideo] = useState('');
+    const [descricao, setDescricao] = useState('');
+    
+    useEffect(() => {
+        if (video) {
+            setTitulo(video.nome);
+            setCategoria(video.categoria);
+            setCapa(video.capa);
+            setLinkVideo(video.video);
+            setDescricao(video.descricao);
+        }
+    }, [video]);
+
+    const aoEnviar = (evento) => {
+        evento.preventDefault();
+        aoGuardar([
+            titulo,
+            categoria,
+            capa,
+            linkVideo,
+            descricao
+        ])
+    }
+    
     return(
         <>
             {mostrar && <>
@@ -10,34 +42,43 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoAlterar, aoEnviar }) => {
                         <button onClick={aoFechar}><img src={fechar} alt='fechar'/></button>
                         <h2>Editar card:</h2>
                         <form onSubmit={aoEnviar}>
-                            <div>
-                                <label for='nome'>Título</label>
-                                <input type='text' id='nome' name='titulo' value={video.titulo} onChange={aoAlterar} placeholder='ex.: o que é javascrip?'/>
-                            </div>
-                            <div>
-                                <label>Categoria</label>
-                                <select>
-                                    <option>frontend</option>
-                                    <option>backend</option>
-                                    <option>mobile</option>
-                                    <option>inovação</option>
-                                    <option>gestão</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for='imagem'>Imagem</label>
-                                <input type='text' id='imagem' name='urlImagem' value={video.urlImagem} onChange={aoAlterar} placeholder='https//:...'/>
-                            </div>
-                            <div>
-                                <label for='video'>Vídeo</label>
-                                <input type='text' id='video' name='urlVideo' value={video.urlVideo} onChange={aoAlterar} placeholder='https//:...'/>
-                            </div>
-                            <div>
-                                <label for='descricao'>Descrição</label>
-                                <textarea id='descricao' name='descricao' value={video.descricao} onChange={aoAlterar} placeholder='Cole ou escreva aqui a descrição do vídeo'/>
-                            </div>
-                            <button>Guardar</button>
-                            <input type='reset' value='Limpar'/>
+                            <CampoTexto 
+                                obrigatorio
+                                label='Título'
+                                placeholder='ex.: o que é javascript?'
+                                valor={titulo}
+                                aoAlterar={valor => setTitulo(valor)}
+                            />
+                            <ListaSuspensa 
+                                obrigatorio
+                                label='Categoria'
+                                items={categorias}
+                                valor={categoria}
+                                aoAlterar={valor => setCategoria(valor)}
+                            />
+                            <CampoTexto 
+                                obrigatorio
+                                label='Imagem'
+                                placeholder='https//:...'
+                                valor={capa}
+                                aoAlterar={valor => setCapa(valor)}
+                            />
+                            <CampoTexto 
+                                obrigatorio
+                                label='Vídeo'
+                                placeholder='https//:...'
+                                valor={video}
+                                aoAlterar={valor => setLinkVideo(valor)}
+                            />
+                            <CampoAreaTexto 
+                                obrigatorio
+                                label='Descrição'
+                                placeholder='Cole ou escreva aqui a descrição do vídeo'
+                                valor={descricao}
+                                aoAlterar={valor => setDescricao(valor)}
+                            />
+                            <Botao type='button' valor='Guardar'/>
+                            <Botao type='reset' valor='Limpar'/>
                         </form>
                     </div>
                 </div>

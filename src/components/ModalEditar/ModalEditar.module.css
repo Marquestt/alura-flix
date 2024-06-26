@@ -14,16 +14,19 @@
 }
 
 .container {
-    height: 75%;
+    height: 75vh;
     width: 80%;
     background-color: #03122F;
     border: 1px solid var(--azul-claro);
     padding: 3rem;
     position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    color: var(--cinza-claro);
 }
 
 .container h2 {
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 4rem;
     color: #2271D1;
 }

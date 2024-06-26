@@ -18,37 +18,5 @@
 .formulario .container {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
-    flex-wrap: wrap;
-    flex-direction: column; /* Deixar assim por enquanto */
-}
-
-.formulario input, .formulario select, .formulario textarea {
-    width: 40%;
-    border: .1rem solid #262626;
-    background-color: transparent;
-    height: 62px;
-    border-radius: .5rem;
-    padding-left: .5rem;
-    color: #676767;
-}
-
-.formulario textarea {
-    height: 220px;
-}
-
-.formulario .botao, .formulario .reset {
-    width: 180px;
-    height: 50px;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: .1rem solid var(--azul);
-    border-radius: 1rem;
-    color: var(--cinza-claro);
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.formulario .reset {
-    border-color: var(--cinza-claro);
+    flex-flow: column wrap;
 }

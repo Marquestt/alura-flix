@@ -1,0 +1,16 @@
+.categorias {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 3rem;
+}
+
+select {
+    margin-top: 1rem;
+    width: 40%;
+    border: .1rem solid #262626;
+    background-color: transparent;
+    height: 62px;
+    border-radius: .5rem;
+    padding-left: .5rem;
+    color: #676767;
+}
