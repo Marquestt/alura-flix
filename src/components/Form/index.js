@@ -25,14 +25,15 @@ const Form = ({ aoGuardar, categorias, video }) => {
 
     const aoEnviar = (evento) => {
         evento.preventDefault();
-        aoGuardar([
-            titulo,
-            categoria,
-            capa,
-            linkVideo,
-            descricao
-        ])
+        aoGuardar({
+            nome: titulo,
+            categoria: categoria,
+            capa: capa,
+            video: linkVideo,
+            descricao: descricao
+        });
     }
+
 
     return(
         <form className={styles.formulario} onSubmit={aoEnviar}>

@@ -12,18 +12,22 @@
     display: flex;
     justify-content: space-evenly;
     border-radius: 0 0 1rem 1rem;
+    padding: .7rem;
     align-items: center;
-    color: var(--cinza-claro);
-    text-transform: uppercase;
     background-color: var(--cinza-escuro);
 }
 
-.container div p {
+.container div button {
+    color: var(--cinza-claro);
     cursor: pointer;
     font-weight: 600;
+    border-style: none;
+    text-decoration: none;
+    background-color: transparent;
+    text-transform: uppercase;
 }
 
-.container div p img {
+.container div button img {
     padding-right: 1rem;
     vertical-align: middle;
 }

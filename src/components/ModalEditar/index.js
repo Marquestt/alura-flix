@@ -39,13 +39,12 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
             {mostrar && <>
                 <div className={styles.overlay}>
                     <div className={styles.container}>
-                        <button onClick={aoFechar}><img src={fechar} alt='fechar'/></button>
+                        <button className={styles.fechar} onClick={aoFechar}><img src={fechar} alt='fechar'/></button>
                         <h2>Editar card:</h2>
                         <form onSubmit={aoEnviar}>
                             <CampoTexto 
                                 obrigatorio
                                 label='Título'
-                                placeholder='ex.: o que é javascript?'
                                 valor={titulo}
                                 aoAlterar={valor => setTitulo(valor)}
                             />
@@ -59,25 +58,22 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                             <CampoTexto 
                                 obrigatorio
                                 label='Imagem'
-                                placeholder='https//:...'
                                 valor={capa}
                                 aoAlterar={valor => setCapa(valor)}
                             />
                             <CampoTexto 
                                 obrigatorio
                                 label='Vídeo'
-                                placeholder='https//:...'
                                 valor={video}
                                 aoAlterar={valor => setLinkVideo(valor)}
                             />
                             <CampoAreaTexto 
                                 obrigatorio
                                 label='Descrição'
-                                placeholder='Cole ou escreva aqui a descrição do vídeo'
                                 valor={descricao}
                                 aoAlterar={valor => setDescricao(valor)}
                             />
-                            <Botao type='button' valor='Guardar'/>
+                            <Botao onClick={aoEnviar} type='submit' valor='Guardar'/>
                             <Botao type='reset' valor='Limpar'/>
                         </form>
                     </div>

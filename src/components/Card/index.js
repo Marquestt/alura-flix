@@ -5,23 +5,27 @@ import lapis from './pencil.png';
 const Card = ({ video, aoEditar, contorno, borda }) => {
     return(
         <div className={styles.container}>
-            <img 
-                src={video.capa} 
-                alt={video.nome} 
-                className={styles.capa} 
-                style={{border: borda}}/>
+            <iframe 
+                width="432" 
+                height="260" 
+                src={video.video} 
+                title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
             <div style={{boxShadow: contorno, border: borda }}>
-                <p><img 
+                <button><img 
                         src={lixo} 
                         alt='lixeira'
                     /> 
-                Deletar</p> 
-                <p><img 
+                Deletar</button> 
+                <button 
+                    onClick={() => aoEditar(video)}>
+                    <img 
                         src={lapis} 
-                        alt='lapis' 
-                        onClick={() => aoEditar(video)}
+                        alt='lapis'
                     /> 
-                Editar</p>
+                Editar</button>
             </div>
         </div>
     )
