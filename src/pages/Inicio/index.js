@@ -6,7 +6,7 @@ import { useState } from 'react';
 import videoData from '../../json/db.json';
 
 const Inicio = () => {
-    const [categorias, setCategorias] = useState(videoData);
+    const [categorias, setCategorias] = useState(videoData || []);
     const [videoAtual, setVideoAtual] = useState(null);
     const [mostrarEditar, setMostrarEditar] = useState(false);    
 
@@ -15,10 +15,12 @@ const Inicio = () => {
         setVideoAtual(null);
     }
 
+
+
     return(
        <>
         <Banner />
-        {categorias.map(categoria => (
+        {Array.isArray(categorias) && categorias.map(categoria => (
             <Categoria 
                 key={categoria.categoriaId} 
                 categoria={categoria} 
@@ -26,6 +28,14 @@ const Inicio = () => {
                 aoEditar={(video) => {
                     setVideoAtual(video); 
                     setMostrarEditar(true);
+                }}
+                aoDeletar={(videoId) => {
+                    setCategorias(categorias.map(categoria => (
+                        {
+                            ...categoria,
+                            videos: categoria.videos.filter(video => video.id !== videoId)
+                        }
+                    )))
                 }}
             />
         ))}

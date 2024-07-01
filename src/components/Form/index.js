@@ -74,7 +74,7 @@ const Form = ({ aoGuardar, categorias, video }) => {
                     valor={descricao}
                     aoAlterar={valor => setDescricao(valor)}
                 />
-                <Botao type='button' valor='Guardar'/>
+                <Botao type='submit' valor='Guardar'/>
                 <Botao type='reset' valor='Limpar'/>
             </div>
         </form>

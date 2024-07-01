@@ -2,7 +2,7 @@ import styles from './Card.module.css';
 import lixo from './trash.png';
 import lapis from './pencil.png';
 
-const Card = ({ video, aoEditar, contorno, borda }) => {
+const Card = ({ video, aoEditar, aoDeletar, contorno, borda }) => {
     return(
         <div className={styles.container}>
             <iframe 
@@ -14,7 +14,9 @@ const Card = ({ video, aoEditar, contorno, borda }) => {
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen></iframe>
             <div style={{boxShadow: contorno, border: borda }}>
-                <button><img 
+                <button
+                    onClick={() => aoDeletar(video)}>
+                    <img 
                         src={lixo} 
                         alt='lixeira'
                     /> 
