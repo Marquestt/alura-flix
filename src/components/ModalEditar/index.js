@@ -7,15 +7,16 @@ import ListaSuspensa from 'components/ListaSuspensa';
 import { useEffect, useState } from 'react';
 
 const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
-    const [titulo, setTitulo] = useState('');
+    
+    const [nome, setNome] = useState('');
     const [categoria, setCategoria] = useState('');
     const [capa, setCapa] = useState('');
     const [linkVideo, setLinkVideo] = useState('');
     const [descricao, setDescricao] = useState('');
-    
+
     useEffect(() => {
         if (video) {
-            setTitulo(video.nome);
+            setNome(video.nome);
             setCategoria(video.categoria);
             setCapa(video.capa);
             setLinkVideo(video.video);
@@ -25,13 +26,13 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
 
     const aoEnviar = (evento) => {
         evento.preventDefault();
-        aoGuardar([
-            titulo,
-            categoria,
-            capa,
-            linkVideo,
-            descricao
-        ])
+        aoGuardar({
+            nome: nome,
+            categoria: categoria,
+            capa: capa,
+            video: linkVideo,
+            descricao: descricao
+        });
     }
     
     return(
@@ -45,8 +46,8 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                             <CampoTexto 
                                 obrigatorio
                                 label='Título'
-                                valor={titulo}
-                                aoAlterar={valor => setTitulo(valor)}
+                                valor={nome}
+                                aoAlterar={valor => setNome(valor)}
                             />
                             <ListaSuspensa 
                                 obrigatorio
@@ -73,8 +74,10 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                                 valor={descricao}
                                 aoAlterar={valor => setDescricao(valor)}
                             />
-                            <Botao onClick={aoEnviar} type='submit' valor='Guardar'/>
-                            <Botao type='reset' valor='Limpar'/>
+                            <div className={styles.containerBotao}>
+                                <Botao type='submit' valor='Guardar'/>
+                                <Botao type='reset' valor='Limpar'/>
+                            </div>
                         </form>
                     </div>
                 </div>

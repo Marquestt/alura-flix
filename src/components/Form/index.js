@@ -7,7 +7,7 @@ import Botao from 'components/Botao';
 
 const Form = ({ aoGuardar, categorias, video }) => {
 
-    const [titulo, setTitulo] = useState('');
+    const [nome, setNome] = useState('');
     const [categoria, setCategoria] = useState('');
     const [capa, setCapa] = useState('');
     const [linkVideo, setLinkVideo] = useState('');
@@ -15,7 +15,7 @@ const Form = ({ aoGuardar, categorias, video }) => {
 
     useEffect(() => {
         if (video) {
-            setTitulo(video.nome);
+            setNome(video.nome);
             setCategoria(video.categoria);
             setCapa(video.capa);
             setLinkVideo(video.video);
@@ -26,14 +26,13 @@ const Form = ({ aoGuardar, categorias, video }) => {
     const aoEnviar = (evento) => {
         evento.preventDefault();
         aoGuardar({
-            nome: titulo,
+            nome: nome,
             categoria: categoria,
             capa: capa,
             video: linkVideo,
             descricao: descricao
         });
     }
-
 
     return(
         <form className={styles.formulario} onSubmit={aoEnviar}>
@@ -43,8 +42,8 @@ const Form = ({ aoGuardar, categorias, video }) => {
                     obrigatorio
                     label='Título'
                     placeholder='insira o título'
-                    valor={titulo}
-                    aoAlterar={valor => setTitulo(valor)}
+                    valor={nome}
+                    aoAlterar={valor => setNome(valor)}
                 />
                 <ListaSuspensa 
                     obrigatorio
@@ -74,8 +73,10 @@ const Form = ({ aoGuardar, categorias, video }) => {
                     valor={descricao}
                     aoAlterar={valor => setDescricao(valor)}
                 />
-                <Botao type='submit' valor='Guardar'/>
-                <Botao type='reset' valor='Limpar'/>
+                <div className={styles.containerBotao}>
+                    <Botao type='submit' valor='Guardar'/>
+                    <Botao type='reset' valor='Limpar'/>
+                </div>
             </div>
         </form>
     )

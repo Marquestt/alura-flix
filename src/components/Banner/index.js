@@ -1,16 +1,23 @@
 import styles from './Banner.module.css';
 
-const Banner = () => {
-    // { categoria, titulo, descricao, capa }
+const Banner = ({ video, categoria }) => {
     return(
-        <section className={styles.capa}>
+        <section className={styles.capa} style={{backgroundImage: `url(${video.capa})`, border: categoria.borda}}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <h2>Front end</h2>
-                    <h3>SEO com React</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula velit ut nunc vehicula imperdiet. Fusce fermentum enim eget turpis egestas, id accumsan lorem sagittis. Suspendisse potenti. Vivamus a risus ut neque tincidunt pharetra. Pellentesque malesuada mauris ut magna interdum, a laoreet metus interdum. Donec massa nibh, vulputate in semper non, ultricies eu lectus. Quisque molestie vehicula suscipit. Sed molestie justo quis sodales vulputate. Nulla facilisi. Aliquam id finibus neque. Nulla facilisi. Fusce blandit luctus pulvinar. Sed quis vulputate purus.</p>
+                    <h2 style={{ backgroundColor: categoria.corPrincipal }}>{categoria.nome}</h2>
+                    <h3>{video.nome}</h3>
+                        <p>{video.descricao}</p>
                 </div>
-                <img src='https://i.pinimg.com/564x/ac/02/07/ac02073cc739700e575b96b95ecb619f.jpg' alt='Capa do vídeo'/>
+                <iframe
+                style={{border: categoria.borda}}
+                width="646" 
+                height="333" 
+                src={video.video} 
+                title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
             </div>
         </section>
     )

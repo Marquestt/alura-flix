@@ -8,15 +8,12 @@
 }
 
 .capa::before  {
-    background-image: url(https://i.pinimg.com/564x/ac/02/07/ac02073cc739700e575b96b95ecb619f.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border: 2px solid var(--azul);
-    opacity: .6;
     position: absolute;
+    opacity: 0.6;
     z-index: -1;
-    content: '';
     top: 0;
     left: 0;
     right: 0;
@@ -33,12 +30,11 @@
     color: var(--cinza-claro);
     position: relative;
     z-index: 1;
+    max-width: 665px;
 }
 
 .content h2 {
-    background-color: var(--azul-claro);
     border-radius: .5rem;
-    width: 295px;
     font-size: 48px;
     text-align: center;
     text-transform: uppercase;
@@ -54,8 +50,6 @@
     font-weight: 300;
 }
 
-.container img {
-    width: 646px;
-    height: 333px;
-    border: .22rem solid var(--azul-claro);
+iframe {
+    margin-top: 1rem;
 }

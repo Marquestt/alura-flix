@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './NavLinks.module.css';
 
 const NavLinks = ({ children, url }) => {
     return(
-        <Link to={url} className={styles.link}>
+        <NavLink
+        className={({ isActive }) => `
+            ${styles.link}
+            ${isActive ? styles.linkDestacado : ""}
+            `}  
+            to={url} end
+        >
             {children}
-        </Link>
+        </NavLink>
     )
 }
 

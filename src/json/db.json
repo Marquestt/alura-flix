@@ -7,11 +7,11 @@
         "borda": ".22rem solid #68D1FF",
         "videos": [
             {
-                "id": 1,
+                "id": 2132,
                 "nome": "O que faz uma desenvolvedora front-end?",
                 "descricao": "O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa nesse episódio!",
                 "video": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=gky-aJ6pTPum8cPG",
-                "capa": "https://via.placeholder.com/150"
+                "capa": "https://veduca.org/wp-content/uploads/2024/03/Alura-oferece-60-mil-vagas-em-cursos-gratuitos-de-Python-e-analise-de-dados.jpg"
             }
         ]
     },
@@ -23,11 +23,11 @@
         "borda": ".22rem solid #00C86F",
         "videos": [
             {
-                "id": 1,
+                "id": 54645,
                 "nome": "O que faz uma desenvolvedora Back-end? com Juliana Amoasei",
                 "descricao": "Afinal, quem trabalha com Back-end faz o que? Com quais outras áreas da tecnologia essa pessoa acaba se relacionando no dia a dia de trabalho e quais os possíveis caminhos nessa carreira? A Juliana Amoasei responde tudo isso pra você no vídeo! Confere aí!",
                 "video": "https://www.youtube.com/embed/fiPfvylj6rk?si=JlQCUlKl5bX9sWqB",
-                "capa": "https://via.placeholder.com/150"
+                "capa": "https://veduca.org/wp-content/uploads/2024/03/Alura-oferece-60-mil-vagas-em-cursos-gratuitos-de-Python-e-analise-de-dados.jpg"
             }
         ]
     },
@@ -39,11 +39,11 @@
         "borda": ".22rem solid #FFBA05",
         "videos": [
             {
-                "id": 1,
+                "id": 65789,
                 "nome": "Mercado de Trabalho | Desmistificando Mobile - Ep #5",
                 "descricao": "Helô entendeu como ela pode iniciar seus estudos em mobile, quais são as linguagens e frameworks mais utilizadas e as diferenças entre elas. Agora é hora de saber como é o mercado de trabalho e quais as os caminhos que ela poderia seguir dentro da carreira de desenvolvedora de aplicativos 😆",
                 "video": "https://www.youtube.com/embed/YhnNOTde2I0?si=vYFmOOlL58i8RC4Z",
-                "capa": "https://via.placeholder.com/150"
+                "capa": "https://veduca.org/wp-content/uploads/2024/03/Alura-oferece-60-mil-vagas-em-cursos-gratuitos-de-Python-e-analise-de-dados.jpg"
             }
         ]
     },
@@ -55,11 +55,11 @@
         "borda": ".22rem solid #FB24FF",
         "videos": [
             {
-                "id": 1,
+                "id": 21684,
                 "nome": "As 9 Softskills mais desejadas pelas empresas",
                 "descricao": "O que são as Softskills e por que é tão importante desenvolvê-las para se posicionar no mercado de trabalho? Neste Alura+, a Pri Stuani fala sobre as 9 habilidades comportamentais mais buscadas por empresas em seus profissionais e como elas te auxiliam no dia a dia.",
                 "video": "https://www.youtube.com/embed/SjY0zj17-8U?si=EBcad852OSuB-0XX",
-                "capa": "https://via.placeholder.com/150"
+                "capa": "https://veduca.org/wp-content/uploads/2024/03/Alura-oferece-60-mil-vagas-em-cursos-gratuitos-de-Python-e-analise-de-dados.jpg"
             }
         ]
     }

@@ -5,7 +5,8 @@ import lapis from './pencil.png';
 const Card = ({ video, aoEditar, aoDeletar, contorno, borda }) => {
     return(
         <div className={styles.container}>
-            <iframe 
+            <iframe
+                style={{border: borda}} 
                 width="432" 
                 height="260" 
                 src={video.video} 
@@ -15,7 +16,7 @@ const Card = ({ video, aoEditar, aoDeletar, contorno, borda }) => {
                 allowfullscreen></iframe>
             <div style={{boxShadow: contorno, border: borda }}>
                 <button
-                    onClick={() => aoDeletar(video)}>
+                    onClick={() => aoDeletar(video.id)}>
                     <img 
                         src={lixo} 
                         alt='lixeira'

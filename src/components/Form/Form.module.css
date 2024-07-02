@@ -15,8 +15,8 @@
     border-color: #262626;
 }
 
-.formulario .container {
+.formulario .container .containerBotao {
     display: flex;
     justify-content: space-between;
-    flex-flow: column wrap;
+    max-width: 600px;
 }

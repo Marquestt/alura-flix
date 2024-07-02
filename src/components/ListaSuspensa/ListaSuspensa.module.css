@@ -6,6 +6,7 @@
 
 select {
     margin-top: 1rem;
+    max-width: 420px;
     width: 40%;
     border: .1rem solid #262626;
     background-color: transparent;
