@@ -13,7 +13,22 @@
     align-content: center;
 }
 
-.card {
+.containerCards {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 calc(25% - 1rem);
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
 }

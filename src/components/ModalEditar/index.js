@@ -4,10 +4,12 @@ import fechar from './cross.png';
 import Botao from 'components/Botao';
 import CampoAreaTexto from 'components/CampoAreaTexto';
 import ListaSuspensa from 'components/ListaSuspensa';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { VideoContext } from 'contexto';
 
-const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
+const ModalEditar = ({ mostrar, aoFechar, video }) => {
     
+    const { categorias, aoEnviar } = useContext(VideoContext);
     const [nome, setNome] = useState('');
     const [categoria, setCategoria] = useState('');
     const [capa, setCapa] = useState('');
@@ -24,16 +26,28 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
         }
     }, [video]);
 
-    const aoEnviar = (evento) => {
+    const aoEnviarForm = (evento) => {
         evento.preventDefault();
-        aoGuardar({
+        aoEnviar({
+            ...video,
             nome: nome,
             categoria: categoria,
             capa: capa,
             video: linkVideo,
             descricao: descricao
         });
+
+        limparFormulario();
+        aoFechar();
     }
+
+    const limparFormulario = () => {
+        setNome('');
+        setCategoria('');
+        setCapa('');
+        setLinkVideo('');
+        setDescricao('');
+    };
     
     return(
         <>
@@ -42,7 +56,7 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                     <div className={styles.container}>
                         <button className={styles.fechar} onClick={aoFechar}><img src={fechar} alt='fechar'/></button>
                         <h2>Editar card:</h2>
-                        <form onSubmit={aoEnviar}>
+                        <form onSubmit={aoEnviarForm}>
                             <CampoTexto 
                                 obrigatorio
                                 label='Título'
@@ -52,7 +66,7 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                             <ListaSuspensa 
                                 obrigatorio
                                 label='Categoria'
-                                items={categorias}
+                                items={categorias.map(cat => cat.nome)}
                                 valor={categoria}
                                 aoAlterar={valor => setCategoria(valor)}
                             />
@@ -65,7 +79,7 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                             <CampoTexto 
                                 obrigatorio
                                 label='Vídeo'
-                                valor={video}
+                                valor={linkVideo} /* Corrigir aqui */
                                 aoAlterar={valor => setLinkVideo(valor)}
                             />
                             <CampoAreaTexto 
@@ -76,7 +90,7 @@ const ModalEditar = ({ mostrar, aoFechar, video, aoGuardar, categorias }) => {
                             />
                             <div className={styles.containerBotao}>
                                 <Botao type='submit' valor='Guardar'/>
-                                <Botao type='reset' valor='Limpar'/>
+                                <Botao type='reset' valor='Limpar' onClick={limparFormulario}/>
                             </div>
                         </form>
                     </div>
